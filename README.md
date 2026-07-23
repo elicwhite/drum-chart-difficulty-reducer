@@ -1,4 +1,4 @@
-# drum-reducer
+# drum-chart-difficulty-reducer
 
 A reference implementation of a drum difficulty reducer: takes an **Expert**
 drum chart (the source-of-truth note list) and produces **Hard / Medium /
