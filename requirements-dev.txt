@@ -5,3 +5,6 @@
 # (numpy), which build_scorecard.py also needs and so is not repeated here.
 -r requirements.txt
 scikit-learn
+
+# Test runner (python/tests/ + tools/check_parity.sh).
+pytest
