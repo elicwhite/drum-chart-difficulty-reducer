@@ -1,0 +1,37 @@
+name: parity
+
+# Re-proves the repo's central claim on every push/PR: the Python and JavaScript
+# implementations produce bit-identical reductions for BOTH backends, and both
+# reproduce the committed fixtures (model backend rb4_test edit_rate 0.1703;
+# scorecard backend note-for-note). Runs tools/check_parity.sh, which executes the
+# full Python (pytest) and JavaScript (node --test) suites against the fixtures.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Python runtime deps
+        run: pip install -r requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cross-language parity (Python + JS, both backends, all fixtures)
+        run: bash tools/check_parity.sh
+
+      - name: Quality eval (4-system comparison vs Harmonix reductions)
+        run: python tools/eval_quality.py
