@@ -52,12 +52,9 @@ scoring rule is an integer table small enough to read in one sitting (see
 whether you need to inspect every rule or want the highest achievable
 accuracy against Harmonix's own reductions. Both are provided.
 
-## Closeness to Harmonix vs. existing reduction tools
+## Closeness to Harmonix
 
-We don't claim this reducer is "better than" HOPCAT or Onyx — that's a
-subjective call, and those tools were built for different goals (fast,
-general-purpose, user-tunable reduction, run inside a DAW, no learned
-model). What's measured here is a single, objective yardstick: **how
+What's measured here is a single, objective yardstick: **how
 closely does each system's output match Harmonix's own official
 Hard/Medium/Easy reductions** of the same Expert chart, on the **99
 rb4_test songs** (the RB4 held-out set; see [Provenance](#provenance)
