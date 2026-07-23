@@ -1,0 +1,7 @@
+# Dev/build-only dependency -- needed to FIT a scorecard with
+# tools/build_scorecard.py. The runtime `drum_reducer` package (inference:
+# featurize/decode/backend_model/backend_scorecard/reduce) has no dependency
+# on scikit-learn -- see requirements.txt for its one runtime dependency
+# (numpy), which build_scorecard.py also needs and so is not repeated here.
+-r requirements.txt
+scikit-learn

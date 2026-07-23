@@ -1,0 +1,6 @@
+# Runtime dependency for the `drum_reducer` package (both backends use
+# numpy for array ops in featurize/backend_model/backend_scorecard; the
+# portable-exp implementation also uses it). No sklearn, no pickle, no
+# ML framework at inference time -- numpy is the only third-party import
+# anywhere in python/drum_reducer/.
+numpy

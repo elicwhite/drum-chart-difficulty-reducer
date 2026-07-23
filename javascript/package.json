@@ -1,0 +1,13 @@
+{
+  "name": "drum-chart-reducer",
+  "version": "0.1.0",
+  "description": "Reference JavaScript port of the drum difficulty-reducer (Expert -> Hard/Medium/Easy). Mirrors ../python/drum_reducer bit-for-bit -- see ../DETERMINISM_CONTRACT.md.",
+  "private": true,
+  "main": "src/reduce.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
